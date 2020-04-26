@@ -3,4 +3,3 @@ backend/node_modules
 backend/.DS_Store
 backend/*.db
 frontend/.DS_Store
-backend/dados.db
