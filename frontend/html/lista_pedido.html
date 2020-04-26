@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sistema de gestão</title>
+    <link rel="stylesheet" href="../css/lista.css">
+    <link rel="stylesheet" href="../css/main3.css">
+</head>
+<script src="../js/api.js"></script>
+<script src="../js/pedido.js"></script>
+
+<body>
+    <div class="barraBotoes">
+        <div class="botao" onclick="voltarHome()">&lt;</div>
+        <div class="botao" onclick="incluir()">+</div>
+    </div>
+    <div class="limiter">
+        <div class="container-table100">
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead>
+                            <tr class="table100-head">
+                                <th class="column1">Parceiro</th>
+                                <th class="column2">Forma de pagamento</th>
+                                <th class="column3">Data</th>
+                                <th class="column4">Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pedidos">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        identificaParceiro()
+        listaPedidos()
+    </script>
+</body>
+
+</html>

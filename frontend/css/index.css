@@ -1,0 +1,190 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.opcoes {
+    /* Dimensões */
+    width: 90%;
+    height: 16%;
+    /* Margem externa */
+    margin: 1%;
+    /* Margem interna */
+    padding: 2%;
+    /* Bordas */
+    border-radius: 6px;
+    /* Background */
+    background-color: #C86DA4;
+    /* Texto */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    /* Mouse */
+    cursor: pointer;
+}
+.opcoes:hover {
+    box-shadow: 5px 5px gray;
+}
+.logo {
+    width: 200px;
+    height: 200px;
+}
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+    .opcoes {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4rem;
+        height: 7rem;
+        font-size: 3rem;
+        box-shadow: 10px 10px gray;
+    }
+}
+
+.selecionado {
+    /* Display */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    /* Dimensões */
+    width: 90%;
+    height: 87vh;
+    /* Margem externa */
+    margin: 1%;
+    /* Margem interna */
+    padding: 2%;
+    /* Bordas */
+    border-radius: 6px;
+    /* Background */
+    background-color: black;
+    /* Texto */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    color: aqua;
+    text-align: center;
+    font-weight: bold;
+}
+.oculto {
+    display: none;
+}
+.voltar {
+    /* Texto */
+    font-size: 2rem;
+    /* Mouse */
+    cursor: pointer;
+}
+.novo {
+    /* Texto */
+    font-size: 2.5rem;
+    /* Mouse */
+    cursor: pointer;
+}
+.tabela {
+    /* Dimensões */
+    width: 100%;
+    height: 80%;
+    /* Margem externa */
+    margin: 1%;
+    /* Margem interna */
+    padding: 1%;
+    /* Bordas */
+    border-radius: 6px;
+    /* Background */
+    background-color: white;
+    /* Texto */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    color: aqua;
+    text-align: center;
+    font-weight: bold;
+}
+.incluir {
+    /* Display */
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Dimensões */
+    width: 100%;
+    height: 80%;
+    /* Margem externa */
+    margin: 1%;
+    /* Margem interna */
+    padding: 1%;
+    /* Bordas */
+    border-radius: 6px;
+    /* Background */
+    background-color: white;
+    /* Texto */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    color: aqua;
+    text-align: center;
+    font-weight: bold;
+}
+.campos {
+    /* Dimensões */
+    width: 96%;
+    /* Margem externa */
+    margin: 1%;
+    /* Margem interna */
+    padding: 1%;
+    /* Bordas */
+    border-radius: 6px;
+    /* Background */
+    background-color: black;
+    /* Texto */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    color: white;
+}
+.botoes {
+    /* Dimensões */
+    width: 98.4%;
+    /* Margem externa */
+    margin: 1%;
+    /* Margem interna */
+    padding: 1%;
+    /* Bordas */
+    border-radius: 6px;
+    /* Background */
+    background-color: black;
+    /* Texto */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+}
+.lista-top {
+    /* Background */
+    background-color: black;
+    /* Texto */
+    font-size: 1.5rem;
+    color: white;
+}
+.lista {
+    /* Dimensões */
+    width: 100%;
+    /* Bordas */
+    border: 1px solid black;
+    /* Texto */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: .8rem;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+.comando {
+    /* Mouse */
+    cursor: pointer;
+}

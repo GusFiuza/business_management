@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sistema de gestão</title>
+    <link rel="stylesheet" href="../css/main2.css">
+</head>
+<script src="../js/api.js"></script>
+<script src="../js/estoque.js"></script>
+
+<body>
+    <div class="container-contact100">
+        <div class="wrap-contact100">
+            <form class="contact100-form">
+                <div class="wrap-input100 bg1">
+					<span class="label-input100">Código *</span>
+					<input id="codigoPeca" class="input100" type="text" name="codigo" placeholder="Digite o código">
+                </div>
+                <div class="wrap-input100 bg1">
+					<span class="label-input100">Tipo *</span>
+                    <select id="tipoPeca" class="input100" name="tipo">
+                        <option id="tipo0" value=0>Selecionar</option>
+                        <option id="tipo1" value=1>Brinco</option>
+                        <option id="tipo2" value=2>Colar</option>
+                        <option id="tipo3" value=3>Conjunto</option>
+                        <option id="tipo4" value=4>Pulseira</option>
+                        <option id="tipo5" value=5>Pingente</option>
+                    </select>
+                </div>
+                <div class="wrap-input100 bg1">
+					<span class="label-input100">Descrição *</span>
+					<input id="descricaoPeca" class="input100" type="text" name="descricao" placeholder="Digite a descricao da peça">
+                </div>
+                <div class="wrap-input100 bg1">
+					<span class="label-input100">Quantidade *</span>
+					<input id="quantidadePeca" class="input100" type="text" name="quantidade" placeholder="Digite a quantidade">
+                </div>
+                <div class="wrap-input100 bg1">
+					<span class="label-input100">Valor de compra *</span>
+					<input id="valorCompraPeca" class="input100" type="text" name="valorCompra">
+                </div>
+                <div class="wrap-input100 bg1">
+					<span class="label-input100">Valor de venda *</span>
+					<input id="valorVendaPeca" class="input100" type="text" name="valorVenda">
+                </div>
+                <div class="container-contact100-form-btn">
+                    <div id="confirma" class="contact100-form-btn" onclick="incluiPeca()">
+						Incluir
+					</div>
+                </div>
+                <div class="container-contact100-form-btn">
+					<div id="apaga" hidden>
+						Excluir
+                    </div>
+                </div>
+                <div class="container-contact100-form-btn">
+					<div class="contact100-form-btn" onclick="voltarLista()">
+						Voltar
+                    </div>
+				</div>
+            </form>
+        </div>
+    </div>
+    <script>
+        testaAlteracao()
+    </script>
+</body>
+
+</html>

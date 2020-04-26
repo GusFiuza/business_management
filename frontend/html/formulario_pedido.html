@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sistema de gestão</title>
+    <link rel="stylesheet" href="../css/main3.css">
+</head>
+<script src="../js/api.js"></script>
+<script src="../js/pedido.js"></script>
+
+<body>
+    <div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form">
+                <div class="rs1-wrap-input100 bg1">
+					<span class="label-input100">Data da compra</span>
+					<input id="dataPedido" class="input100" type="date" name="data">
+                </div>
+                <div class="rs1-wrap-input100 bg1">
+					<span class="label-input100">Parceiro</span>
+					<select id="idParceiro" class="input100">
+                        <option value=0>Selecionar</option>
+                    </select>
+                </div>
+                <div class="rs1-wrap-input100 bg1">
+					<span class="label-input100">Forma de pagamento</span>
+					<select id="formaPagamento" class="input100">
+                        <option id="forma0" value=0>Selecionar</option>
+                        <option id="forma1" value=1>Dinheiro</option>
+                        <option id="forma2" value=2>Transferência</option>
+                        <option id="forma3" value=3>Débito</option>
+                        <option id="forma4" value=4>Crédito</option>
+                    </select>
+                </div>
+                <div class="rs1-wrap-input100 bg1">
+					<span class="label-input100">Valor da compra</span>
+					<input id="valorPedido" class="input100" type="text" name="valor">
+                </div>
+                <div class="wrap-input100 bg1">
+                    <div class="contact100-form">
+                        <div class="rs2-wrap-input100 bg1">
+                            <span class="label-input100">Código da peça</span>
+                        </div>
+                        <div class="rs2-wrap-input100 bg1">
+                            <span class="label-input100">Quantidade</span>
+                        </div>
+                        <div class="rs2-wrap-input100 bg1">
+                            <span class="label-input100">Valor</span>
+                        </div>
+                    </div>
+                    <div id="itens" class="contact100-form">
+                        <div class="contact100-form">
+                            <div class="rs2-wrap-input100 bg1">
+                                <input id="codigo1" class="input100" type="text" onchange="atualizaQuantidade(1,document.getElementById('codigo1').value)"/>
+                            </div>
+                            <div class="rs2-wrap-input100 bg1">
+                                <select id="quantidade1" class="input100" onchange="atualizaValor(1,document.getElementById('codigo1').value)">
+                                    <option value=0>Selecione</option>
+                                </select>
+                            </div>
+                            <div class="rs2-wrap-input100 bg1">
+                                <input id="valor1" class="input100" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-contact100-form-btn">
+                    <div id="novoItem" class="contact100-form-btn" onclick="novoItem()">
+                        Novo item
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- <input id="confirma" type="button" value="Incluir" onclick="incluiPedido()" /> -->
+    <div class="container-contact100-form-btn">
+        <div id="confirma" class="contact100-form-btn" onclick="incluiPedido()">
+            Incluir
+        </div>
+    </div>
+    <div class="container-contact100-form-btn">
+        <div id="apaga" hidden>
+            Excluir
+        </div>
+    </div>
+    <div class="container-contact100-form-btn">
+        <div class="contact100-form-btn" onclick="voltarLista()">
+            Voltar
+        </div>
+    </div>
+    <script>
+        identificaParceiro()
+        carregaParceiros(tipo)
+        testaAlteracao()
+    </script>
+</body>
+
+</html>

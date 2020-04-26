@@ -1,0 +1,44 @@
+.barraBotoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: black;
+    padding: 0px 115px;
+}
+.botao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 80px;
+    margin: 1%;
+    padding: 2%;
+    border-radius: 6px;
+    background-color: #C86DA4;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 5rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.botao:hover {
+    box-shadow: 5px 5px gray;
+}
+.titulo {
+    color: white;
+}
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+    .barraBotoes {
+        padding: 0px 30px;
+    }
+    .botao {
+        box-shadow: 10px 10px gray;
+    }
+    .titulo {
+        color: white;
+    }
+}

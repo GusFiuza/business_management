@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sistema de gestão</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" type="image/png" href="img/icone.png" />
+</head>
+
+<body>
+    <img class="logo" src="img/logo.png"/>
+    <div class="opcoes" onclick="chama('parceiro','?tipo=1')">Clientes</div>
+    <div class="opcoes" onclick="chama('parceiro','?tipo=2')">Fornecedores</div>
+    <div class="opcoes" onclick="chama('pedido','?tipo=1')">Vendas</div>
+    <div class="opcoes" onclick="chama('pedido','?tipo=2')">Compras</div>
+    <div class="opcoes" onclick="chama('estoque','')">Estoque</div>
+</body>
+
+<script>
+    function chama(modelo, parametro) {
+        window.location = 'html/lista_' + modelo + '.html' + parametro
+    }
+</script>
+
+</html>
