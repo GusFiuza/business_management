@@ -1,6 +1,7 @@
 .DS_Store
 /backend/node_modules
 /backend/.DS_Store
+/backend/dados.db
 /backend/dadosOld.db
 /backend/dados200424.db
 /frontend/.DS_Store
