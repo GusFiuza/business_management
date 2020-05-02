@@ -1,5 +1,45 @@
 const conexao = require('../infraestrutura/conexao')
 
+conexao.all(`CREATE TABLE IF NOT EXISTS pedido (
+                id_pedido INTEGER PRIMARY KEY AUTOINCREMENT,
+                id_parceiro INTEGER NOT NULL,
+                id_tipo_pedido INTEGER NOT NULL,
+                id_forma_pagamento REAL NOT NULL,
+                data_pedido TEXT NOT NULL,
+                valor_pago REAL NOT NULL,
+                FOREIGN KEY(id_parceiro) REFERENCES parceiro(id_parceiro));`, (err) => {
+    if (err) {
+        console.log("Erro na criação da tabela pedido: " + err)
+    } else {
+        conexao.all(`SELECT count(*) as quantidade FROM pedido;`, (err, resultado) => {
+            if (err) {
+                console.log("Erro ao verificar dados de teste: " + err)
+            } else {
+                console.log('Avaliando existência de pedidos')
+                if (resultado[0].quantidade == 0) {
+                    console.log('Cadastrando pedidos para teste')
+                    conexao.all(`INSERT INTO pedido
+                                    (id_parceiro, id_tipo_pedido, id_forma_pagamento, data_pedido, valor_pago )
+                                VALUES
+                                    (2, 2, 1, '1900-01-01', 81);`, (err) => {
+                        if (err) {
+                            console.log("Erro no cadastro de compra para testes: " + err)
+                        }
+                    })
+                    conexao.all(`INSERT INTO pedido
+                                    (id_parceiro, id_tipo_pedido, id_forma_pagamento, data_pedido, valor_pago )
+                                VALUES
+                                    (1, 1, 2, '1900-01-01', 63.4);`, (err) => {
+                        if (err) {
+                            console.log("Erro no cadastro de venda para testes: " + err)
+                        }
+                    })
+                }
+            }
+        })
+    }
+})
+
 class pedido {
     adiciona(pedido, res) {
         const sql = 'INSERT INTO pedido (id_parceiro, id_tipo_pedido, id_forma_pagamento, data_pedido, valor_pago) VALUES (?, ?, ?, ?, ?)'

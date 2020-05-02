@@ -87,7 +87,6 @@ function testaAlteracao() {
     url_string = window.location.href;
     url = new URL(url_string);
     id = url.searchParams.get("id");
-    console.log(id)
     if (id != null) {
         id_pedido = id
         resultado = consultarAPI('pedido', id)
