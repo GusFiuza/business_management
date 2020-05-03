@@ -10,6 +10,15 @@ function identificaParceiro() {
 }
 
 function listaPedidos() {
+
+    vendasStat = consultarAPI('info', 2)
+
+    for (i=0; i < vendasStat.length; i++) {
+        criaCard('Lucro de ' + vendasStat[i].mes,
+            vendasStat[i].Quantidade + ' peças',
+            vendasStat[i].Valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}))
+    }
+
     linhas = document.getElementById('pedidos').children.length
     for (i = 1; i < linhas; i++) {
         document.getElementById('pedidos').children[1].remove()
@@ -87,6 +96,7 @@ function testaAlteracao() {
     url_string = window.location.href;
     url = new URL(url_string);
     id = url.searchParams.get("id");
+    console.log(id)
     if (id != null) {
         id_pedido = id
         resultado = consultarAPI('pedido', id)

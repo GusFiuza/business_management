@@ -32,3 +32,21 @@ function consultarAPI(modelo, identificador) {
         return JSON.parse(Httpreq.responseText)
     }
 }
+
+function criaCard(label, sublabel, conteudo) {
+    card = document.createElement('div')
+    card.setAttribute('class', 'card')
+    titulo = document.createElement('div')
+    titulo.setAttribute('class', 'cardLabel')
+    titulo.textContent = label
+    subtitulo = document.createElement('div')
+    subtitulo.setAttribute('class', 'cardSubLabel')
+    subtitulo.textContent = sublabel
+    content = document.createElement('div')
+    content.setAttribute('class', 'cardContent')
+    content.textContent = conteudo
+    card.appendChild(titulo)
+    card.appendChild(subtitulo)
+    card.appendChild(content)
+    document.getElementById('card-container').appendChild(card)
+}
