@@ -73,7 +73,7 @@ class peca {
     }
 
     lista(res) {
-        const sql = 'SELECT * FROM peca;'
+        const sql = 'SELECT * FROM peca WHERE quantidade_peca > 0;'
 
         conexao.all(sql, (erro, resultado) => {
             if(erro) {

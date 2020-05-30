@@ -16,6 +16,8 @@ class info {
                                 SUM(valor_compra_peca*quantidade_peca) as Valor
                         FROM
                                 peca
+                        WHERE
+                                quantidade_peca > 0
                         GROUP BY
                                 Tipo;`
                 break

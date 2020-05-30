@@ -78,7 +78,7 @@ function incluiPedido() {
         resultado = manterAPI('put', 'pedido', pedido, id_pedido)
         console.log(manterAPI('delete', 'item', '', id_pedido))
     }
-    for (i = 1; i < document.getElementById('itens').childElementCount; i++) {
+    for (i = 1; i <= document.getElementById('itens').childElementCount; i++) {
         item = `pedido=` + id_pedido + `&
         codItem=` + document.getElementById('codigo' + i).value + `&
         quantItem=` + document.getElementById('quantidade' + i).value + `&
