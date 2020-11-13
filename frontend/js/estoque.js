@@ -1,4 +1,40 @@
-tipoEst = ['Selecione', 'Brinco', 'Colar', 'Conjunto', 'Pulseira', 'Pingente']
+// tipoEst = ['Selecione', 'Brinco', 'Colar', 'Conjunto', 'Pulseira', 'Pingente']
+tipoEst = ['Selecione', 'Semijoia', 'Bijuteria']
+
+function filtraMarca() {
+    mostrar = document.getElementById('mostrar').checked
+    for (linha = 0; linha < document.getElementById('estoque').childElementCount; linha++) {
+        linhaTabela = document.getElementById('estoque').children[linha]
+        marca = document.getElementById('estoque').children[linha].children[0].children[0]
+        // if (!linhaTabela.hidden) {
+            if ( mostrar == marca.checked) {
+                linhaTabela.removeAttribute('hidden')
+            } else {
+                linhaTabela.setAttribute('hidden', '')
+            }
+        // }
+    }
+}
+
+function filtraTipo() {
+    exibindo = document.getElementById('type').textContent
+    if (exibindo == 'Tipo') {
+        document.getElementById('type').textContent = 'Semijoias'
+    } else if (exibindo == 'Semijoias') {
+        document.getElementById('type').textContent = 'Bijuterias'
+    } else {
+        document.getElementById('type').textContent = 'Tipo'
+    }
+    exibindo = document.getElementById('type').textContent
+    for (linha = 0; linha < document.getElementById('estoque').childElementCount; linha++) {
+        tableLine = document.getElementById('estoque').children[linha].getAttribute('name')
+        if ( tableLine + 's' == exibindo || exibindo == 'Tipo') {
+            document.getElementById('estoque').children[linha].removeAttribute('hidden')
+        } else {
+            document.getElementById('estoque').children[linha].setAttribute('hidden', '')
+        }
+    }
+}
 
 function listaEstoque() {
 
@@ -10,7 +46,6 @@ function listaEstoque() {
             estStat[i].Valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}))
     }
 
-    
 
     linhas = document.getElementById('estoque').children.length
     for (i = 1; i < linhas; i++) {
@@ -21,7 +56,15 @@ function listaEstoque() {
 
     for (i = 0; i < resultado.length; i++) {
         linha = document.createElement('tr')
+        linha.setAttribute('name', tipoEst[resultado[i].tipo_peca])
         linha.setAttribute('onclick', 'alteraPeca(' + resultado[i].id_peca + ')')
+        
+        marca = document.createElement('td')
+        marca.setAttribute('class', 'column1')
+        check = document.createElement('input')
+        check.setAttribute('type','checkbox')
+        marca.appendChild(check)
+
         codigo = document.createElement('td')
         codigo.setAttribute('class', 'column1')
         codigo.textContent = resultado[i].id_peca
@@ -40,6 +83,7 @@ function listaEstoque() {
         valor_venda = document.createElement('td')
         valor_venda.setAttribute('class', 'column6')
         valor_venda.textContent = resultado[i].valor_venda_peca
+        linha.appendChild(marca)
         linha.appendChild(codigo)
         linha.appendChild(tipo)
         linha.appendChild(descricao)
@@ -78,7 +122,9 @@ function incluiPeca() {
 }
 
 function alteraPeca(id) {
-    window.location = frontendHost + 'html/formulario_estoque.html?id=' + id
+    if (window.event.target.tagName == 'TD') {
+        window.location = frontendHost + 'html/formulario_estoque.html?id=' + id
+    }
 }
 
 function testaAlteracao() {
